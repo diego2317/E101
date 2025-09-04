@@ -12,8 +12,14 @@ n_a = 0:2:50; % for plotting
 y_b = twice(x);
 n_b = 0:0.5:50; % for plotting
 subplot(3,1,1);
-plot(n,x);
+stem(n,x, 'LineWidth', 2);
+xlabel("n", 'FontSize', 16);
+ylabel("X[n]", 'FontSize', 16);
 subplot(3,1,2);
-plot(n_a, y_a);
+stem(n_a, y_a, 'LineWidth', 2);
+xlabel("n", 'FontSize', 16);
+ylabel("$Y_a[n]$", 'Interpreter','latex', 'FontSize', 16);
 subplot(3,1,3);
-plot(n_b, y_b);
+stem(n_b, y_b, 'LineWidth', 2);
+xlabel("n", 'FontSize', 16);
+ylabel("$Y_b[n]$", 'Interpreter','latex', 'FontSize', 16);

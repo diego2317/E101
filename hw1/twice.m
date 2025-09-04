@@ -4,12 +4,12 @@
 % elements
 
 function y = twice(x)
-    if isempty(x)
-        y = x;
-        return
-    end
+    N = length(x);                % original length
+    y = zeros(1, 2*N - 1);        % output has length 2N - 1
 
-    mids = (x(1:end-1) + x(2:end))/2;
-    y = reshape([x(1:end-1); mids], 1, []);
-    y = [y x(end)]; % append last element
+    % even n → copy from x
+    y(1:2:end) = x;
+
+    % odd n → average of neighbors
+    y(2:2:end) = (x(1:end-1) + x(2:end)) / 2;
 end
